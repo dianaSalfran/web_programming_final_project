@@ -1,0 +1,12 @@
+
+
+<form class="modal" method="post" aria-hidden="false">
+    {% csrf_token %}
+    <div class="modal-body">
+        <p><strong>¿Está seguro que desea eliminar la obra?</strong></p>
+    </div>
+    <div class="modal-footer">
+        <input type="submit" value="Eliminar" class="btn btn-danger"/>
+        <a href="{% url 'obra' %}" class="btn btn-danger">Cancel</a>
+    </div>
+</form>

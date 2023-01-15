@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="stylesheet" href="{% static 'css/bootstap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registrar.css' %}">
+
+</head>
+
+<body>
+
+<div class="register-card-container">
+    <div class="register-card">
+        <div class="register-card-logo">
+            <img src="{% static 'media/add_user.png' %}" alt="logo"/>
+        </div>
+        <div class="register-card-header">
+            <h1>Registrarse</h1>
+            <div> Por favor, registrese para usar la plataforma</div>
+        </div>
+        {% if form.errors %}
+        <div class="alert alert-danger">Datos Incorrectos</div>
+        {% endif %}
+        <form class="register-card-form" name="formLog" id="formLog" method="post">
+
+            {% csrf_token %}
+
+            {% for f in form %}
+            {{f.label}}
+            {{f}}
+            {% endfor %}
+            <button class="btn btn-success" id="bt_signup" type="submit">Registrar</button>
+        </form>
+        <div class="register-card-footer">
+            <p><a href="{% url 'login' %}">Ya tengo una cuenta</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/registar.js' %}"></script>
+
+
+</body>
+</html>

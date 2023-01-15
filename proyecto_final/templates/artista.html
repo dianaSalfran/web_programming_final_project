@@ -1,0 +1,59 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artista</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/artista.css' %}">
+
+
+    <section class="bg-info bg-opacity-50 pb-4">
+        <a class="btn btn-success" href="{% url 'create-artista' %}" style="margin-top: 20px; margin-left: 10px">Añadir
+            Artista</a>
+    </section>
+</head>
+<!-------------------------Tabla------------------------>
+<body>
+<div class="col-12 " id="rtista">
+    <table class="table table-striped" id="tabla">
+        <thead>
+        <tr>
+            <td>No</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>CI</td>
+            <td>Grupo</td>
+            <td>Sexo</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for c in object_list %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{c.nombre}}</td>
+            <td>{{c.apellidos}}</td>
+            <td>{{c.ci}}</td>
+            <td>{{c.grupo}}</td>
+            <td>{{c.sexo}}</td>
+            <td>
+                <a href="{% url 'upd-artista' c.id %}" class="btn btn-warning"
+                   style="margin-top: 20px; margin-left: 10px">Modificar</a>
+                <a href="{% url 'dlt-artista' c.id %}" class="btn btn-danger"
+                   style="margin-top: 20px; margin-left: 10px">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/artista.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticar</title>
+    <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
+    <link rel="stylesheet" href={% static 'css/login.css' %}>
+    <script src={% static 'css/login.js' %}></script>
+</head>
+<body>
+    
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src={% static 'media/user.png' %} alt="logo">
+            </div>
+            <div class="login-card-header">
+                <h1>Autenticarse</h1>
+                <div> Por favor, autentiquese para usar la plataforma</div>
+            </div>
+            {% if form.errors %}
+              <div class="alert alert-danger">Usuario o contraseña incorrecto</div>
+           {% endif %}
+            <form class="login-card-form user" method="post" name="formLog" id="formLog">
+                {% csrf_token %}
+                <div class="form-item">
+                <label>Usuario</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-item">
+                 <label>Contraseña</label>
+                    {{ form.password }}
+                </div>
+                <button class="btn btn-success" id="bt_login" type="submit" >Entrar</button>
+                <div class="clearfix"></div>
+            </form>
+            <div class="login-card-footer">
+                <p><a href="{% url 'registrar' %}">Crear una cuenta</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

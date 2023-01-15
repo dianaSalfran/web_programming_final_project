@@ -1,0 +1,36 @@
+{% extends 'artista.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/artista.css' %}">
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="col-md-5 offset-md-3" style="margin-top: 50px">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="offset-md-3" style="color: crimson">Añadir Artista</h1>
+            </div>
+            <div class="card-body">
+                {{form | crispy}}
+            </div>
+            <div class="card-footer">
+                <input id="c_artista" type="submit" class="btn btn-success" style="margin-top: 20px; margin-left: 10px"
+                       value="Create">
+                <a id="ca_artista" type="submit" href="{% url 'artista' %}" style="margin-top: 20px; margin-left: 10px"
+                   class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/modalidad.js' %}"></script>
+{% endblock %}

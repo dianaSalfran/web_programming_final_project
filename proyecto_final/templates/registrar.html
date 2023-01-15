@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/css/signup.css">
+    
+    
+</head>
+<body>
+    
+    <div class="register-card-container">
+        <div class="register-card">
+            <div class="register-card-logo">
+                <img src="/media/add user.png" alt="logo">
+            </div>
+            <div class="register-card-header">
+                <h1>Registrarse</h1>
+                <div> Por favor, registrese para usar la plataforma</div>
+            </div>
+            <form class="register-card-form" name="formLog" id="formLog">
+                <div class="form-item">
+                    <lavel class="material-symbols-rounded" for="email">Correo</lavel>
+                    <input type="email" placeholder="Correo electrónico" name="email" id="email" required autofocus/>
+                </div>
+                <div class="form-item">
+                    <span class="material-symbols-rounded">Contraseña</span>
+                    <input type="password" placeholder="Contraseña" name="password" id="password" required/>
+                </div>
+                <div class="form-item-other">
+                    <input type="checkbox">
+                    <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+                </div>
+                <div class="alert alert-danger">
+                    Rellene los campos vacios
+                </div>
+                <button class="btn btn-success" id="bt_signup" type="submit" >Registrar</button>
+            </form>
+            <div class="register-card-footer">
+                <p><a href="/pages/autenticar.html">Ya tengo una cuenta </a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript" src="../styles/js/signup.js"></script>
+    
+
+</body>
+</html>

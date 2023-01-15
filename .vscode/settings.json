@@ -1,0 +1,5 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "workbench.iconTheme": "vs-minimal",
+    "files.autoSave": "off"
+}

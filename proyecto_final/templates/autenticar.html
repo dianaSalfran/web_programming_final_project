@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
+    <link rel="stylesheet" href={% static 'css/login.css' %}>
+    <script src={% static 'css/login.js' %}></script>
+</head>
+<body>
+    
+    <div class="login-card-container">
+        <div class="login-card">
+            <div class="login-card-logo">
+                <img src={% static 'media/user.png' %} alt="logo">
+            </div>
+            <div class="login-card-header">
+                <h1>Autenticarse</h1>
+                <div> Por favor, autentiquese para usar la plataforma</div>
+            </div>
+            <form class="login-card-form user" method="post" name="formLog" id="formLog">
+                <div class="form-item">
+                    <label class="material-symbols-rounded" for="user">Usuario</lavel>
+                    <input type="text" placeholder="Usuario" name="user" id="id_user" required autofocus/>
+                </div>
+                <div class="form-item">
+                    <lavel class="material-symbols-rounded" for="pasword">Contraseña</lavel>
+                    <input type="password" placeholder="Contraseña" name="password" id="id_password" required/>
+                </div>
+                <div class="form-item-other">
+                    <div class="checkbox">
+                        <input type="checkbox" id="remeberMeCheckbox">
+                        <label for="rememberMeCheckbox">Remember me</label>
+                    </div>
+                    <a href="#">Olvide mi contraseña</a>
+                </div>
+                <button class="btn btn-success" id="bt_login" type="submit" >Entrar</button>
+            </form>
+            <div class="login-card-footer">
+                <p><a href="#">Crear una cuenta</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
