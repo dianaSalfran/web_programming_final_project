@@ -38,9 +38,9 @@
             <td>{{c.nombre}}</td>
             <td>{{c.genero}}</td>
             <td>{{c.duracion}}</td>
-            <td>{{c.autor}}</td>
+            <td>{{c.nombre_autores}}</td>
             <td>
-                <a href="#" class="btn btn-warning" style="margin-top: 20px; margin-left: 10px">Modificar</a>
+                <a href="{% url 'upd-obra' c.id %}" class="btn btn-warning" style="margin-top: 20px; margin-left: 10px">Modificar</a>
                 <a href="{% url 'dlt_obra' c.id %}" class="btn btn-danger" style="margin-top: 20px; margin-left: 10px">Eliminar</a>
             </td>
         </tr>

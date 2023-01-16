@@ -1,7 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms.widgets import SelectMultiple
 from django import forms
-from .models import Artista, Obra, Evento_resultado, Modalidad
+from .models import Artista, Obra #, Evento_resultado, Modalidad
 
 
 class CustomUserForm(UserCreationForm):
@@ -17,18 +18,19 @@ class ArtistaForm(forms.ModelForm):
 
 
 class ObraForm(forms.ModelForm):
+    autor = forms.ModelMultipleChoiceField(queryset=Artista.objects.all(), widget=SelectMultiple())
     class Meta:
         model = Obra
         fields = '__all__'
 
 
-class EventoForm(forms.ModelForm):
-    class Meta:
-        model = Evento_resultado
-        fields = '__all__'
+# class EventoForm(forms.ModelForm):
+#     class Meta:
+#         model = Evento_resultado
+#         fields = '__all__'
 
 
-class ModalidadForm(forms.ModelForm):
-    class Meta:
-        model = Modalidad
-        fields = '__all__'
+# class ModalidadForm(forms.ModelForm):
+#     class Meta:
+#         model = Modalidad
+#         fields = '__all__'

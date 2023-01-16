@@ -1,28 +1,28 @@
-{% extends 'modalidad.html' %}
+{% extends 'obra/obra.html' %}
 {% load crispy_forms_filters %}
 {% load static %}
 
 
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'css/modalidad.css' %}">
+<link rel="stylesheet" href="{% static 'css/obra.css' %}">
 
 
 {% block content %}
 <form method="POST">
     {% csrf_token %}
-    <div class="col-md-5 offset-md-3" style="margin-top: 50px">
+    <div class="col-md-4 offset-md-4" style="margin-top: 50px">
         <div class="card">
             <div class="card-header">
-                <h1 class="offset-md-3" style="color: crimson">Crear Modalidad</h1>
+                <h1 class="offset-md-3" style="color: crimson">Añadir Obra</h1>
             </div>
             <div class="card-body">
                 {{form | crispy}}
             </div>
             <div class="card-footer">
-                <input id="c_modality" type="submit" class="btn btn-success" style="margin-top: 20px; margin-left: 10px"
+                <input id="c_obra" type="submit" class="btn btn-success" style="margin-top: 20px; margin-left: 10px"
                        value="Create">
-                <a id="ca_modality" type="submit" href="{% url 'modalidad' %}"
-                   style="margin-top: 20px; margin-left: 10px" class="btn btn-danger">Cancelar</a>
+                <a id="ca_obra" href="{% url 'obra' %}" style="margin-top: 20px; margin-left: 10px"
+                   class="btn btn-danger">Cancelar</a>
             </div>
         </div>
     </div>
@@ -30,5 +30,5 @@
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/modalidad.js' %}"></script>
+<script src="{% static 'js/obra.js' %}"></script>
 {% endblock %}
